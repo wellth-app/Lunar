@@ -40,7 +40,7 @@ final class LunarStoreSpec: QuickSpec {
             
             afterEach {
                 managedObjectContext.reset()
-                mainContext.reset() 
+                mainContext.reset()
             }
             
             it("can merge records into a context") {
@@ -121,7 +121,9 @@ final class LunarStoreSpec: QuickSpec {
                 
                 beforeEach {
                     do {
-                        let _ = try subject.merge(records: recordSet).await()
+                        let _ = try subject
+                            .merge(records: recordSet)
+                            .await()
                     } catch { }
                 }
                 
