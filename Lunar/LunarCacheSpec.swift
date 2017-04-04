@@ -10,9 +10,9 @@ import Apollo
 import Lunar
 
 
-final class LunarStoreSpec: QuickSpec {
+final class LunarCacheSpec: QuickSpec {
     override func spec() {
-        describe("Lunar Store") {
+        describe("Lunar Cache") {
             let bundle = Bundle(for: User.self)
             let dataStack = CoreDataStack(modelName: "Model", bundle: bundle, storeType: .inMemory)
             let mainContext = dataStack.mainContext
@@ -26,7 +26,7 @@ final class LunarStoreSpec: QuickSpec {
                 return formatter
             }()
             
-            var subject: LunarStore!
+            var subject: LunarCache!
             
             beforeEach {
                 managedObjectContext = dataStack.newBackgroundContext(
@@ -35,7 +35,7 @@ final class LunarStoreSpec: QuickSpec {
                     mergeChanges: false
                 )
                 
-                subject = LunarStore(context: managedObjectContext, dateFormatter: dateFormatter)
+                subject = LunarCache(context: managedObjectContext, dateFormatter: dateFormatter)
             }
             
             afterEach {
@@ -124,7 +124,9 @@ final class LunarStoreSpec: QuickSpec {
                         let _ = try subject
                             .merge(records: recordSet)
                             .await()
-                    } catch { }
+                    } catch {
+                        fail()
+                    }
                 }
                 
                 

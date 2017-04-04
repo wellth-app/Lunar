@@ -4,7 +4,7 @@ import JSONMapping
 import RemoteMapping
 
 
-struct LunarStore: NormalizedCache {
+struct LunarCache: NormalizedCache {
     private let managedObjectContext: NSManagedObjectContext
     private let dateFormatter: JSONDateFormatter?
     
