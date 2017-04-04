@@ -4,16 +4,16 @@ import JSONMapping
 import RemoteMapping
 
 
-struct LunarCache: NormalizedCache {
-    private let managedObjectContext: NSManagedObjectContext
-    private let dateFormatter: JSONDateFormatter?
+public struct LunarCache: NormalizedCache {
+    public let managedObjectContext: NSManagedObjectContext
+    public let dateFormatter: JSONDateFormatter?
     
-    init(context: NSManagedObjectContext, dateFormatter: JSONDateFormatter? = nil) {
+    public init(context: NSManagedObjectContext, dateFormatter: JSONDateFormatter? = nil) {
         self.managedObjectContext = context
         self.dateFormatter = dateFormatter
     }
     
-    func loadRecords(forKeys keys: [CacheKey]) -> Promise<[Record?]> {
+    public func loadRecords(forKeys keys: [CacheKey]) -> Promise<[Record?]> {
         let context = managedObjectContext
         let formatter = dateFormatter
         
@@ -65,7 +65,7 @@ struct LunarCache: NormalizedCache {
         }
     }
     
-    func merge(records: RecordSet) -> Promise<Set<CacheKey>> {
+    public func merge(records: RecordSet) -> Promise<Set<CacheKey>> {
         let context = managedObjectContext
         let formatter = dateFormatter
         
