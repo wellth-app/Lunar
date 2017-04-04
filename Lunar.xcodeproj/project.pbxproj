@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		D0B88ADA1E93F8DD00DE8C13 /* Lunar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AD01E93F8DD00DE8C13 /* Lunar.framework */; };
 		D0B88AE11E93F8DE00DE8C13 /* Lunar.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B88AD31E93F8DD00DE8C13 /* Lunar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0B88AEB1E93F8EF00DE8C13 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = D0B88AEA1E93F8EF00DE8C13 /* Cartfile */; };
-		D0B88AED1E93F8FB00DE8C13 /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = D0B88AEC1E93F8FB00DE8C13 /* Cartfile.private */; };
 		D0B88AEF1E93F94A00DE8C13 /* LunarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88AEE1E93F94A00DE8C13 /* LunarStore.swift */; };
-		D0B88AF11E93F98900DE8C13 /* LunarStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88AF01E93F98900DE8C13 /* LunarStoreSpec.swift */; };
 		D0B88AF81E93FB8000DE8C13 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF31E93FB8000DE8C13 /* Apollo.framework */; };
 		D0B88AF91E93FB8000DE8C13 /* JSONMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF41E93FB8000DE8C13 /* JSONMapping.framework */; };
 		D0B88AFA1E93FB8000DE8C13 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF51E93FB8000DE8C13 /* Nimble.framework */; };
@@ -23,12 +20,18 @@
 		D0B88B011E93FDD500DE8C13 /* SequenceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B001E93FDD500DE8C13 /* SequenceExtensions.swift */; };
 		D0B88B081E93FEAC00DE8C13 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B071E93FEAC00DE8C13 /* DictionaryExtensions.swift */; };
 		D0B88B0C1E9410DE00DE8C13 /* CoreDataStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88B0A1E9410CF00DE8C13 /* CoreDataStack.framework */; };
-		D0B88B101E941D0700DE8C13 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B0E1E941D0700DE8C13 /* Model.xcdatamodeld */; };
 		D0B88B141E941D4700DE8C13 /* ObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B131E941D4700DE8C13 /* ObjectID.swift */; };
 		D0B88B161E941D8F00DE8C13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B151E941D8F00DE8C13 /* User.swift */; };
 		D0B88B181E94235400DE8C13 /* GraphQLIDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B171E94235400DE8C13 /* GraphQLIDExtensions.swift */; };
 		D0B88B1B1E9425EE00DE8C13 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88B1A1E9425EE00DE8C13 /* CoreData.framework */; };
-		D0B88B1D1E9426C000DE8C13 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = D0B88B1C1E9426C000DE8C13 /* Cartfile.resolved */; };
+		D0B88B1E1E9432D700DE8C13 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = D0B88B0E1E941D0700DE8C13 /* Model.xcdatamodeld */; };
+		D0B88B1F1E9436DA00DE8C13 /* LunarStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88AF01E93F98900DE8C13 /* LunarStoreSpec.swift */; };
+		D0B88B231E94375700DE8C13 /* CoreDataStack.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0B88B0A1E9410CF00DE8C13 /* CoreDataStack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0B88B241E94375700DE8C13 /* Apollo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0B88AF31E93FB8000DE8C13 /* Apollo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0B88B251E94375700DE8C13 /* JSONMapping.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0B88AF41E93FB8000DE8C13 /* JSONMapping.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0B88B261E94375700DE8C13 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0B88AF51E93FB8000DE8C13 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0B88B271E94375700DE8C13 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0B88AF61E93FB8000DE8C13 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0B88B281E94375700DE8C13 /* RemoteMapping.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0B88AF71E93FB8000DE8C13 /* RemoteMapping.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,24 @@
 			remoteInfo = Lunar;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D0B88B211E94374400DE8C13 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D0B88B231E94375700DE8C13 /* CoreDataStack.framework in CopyFiles */,
+				D0B88B241E94375700DE8C13 /* Apollo.framework in CopyFiles */,
+				D0B88B251E94375700DE8C13 /* JSONMapping.framework in CopyFiles */,
+				D0B88B261E94375700DE8C13 /* Nimble.framework in CopyFiles */,
+				D0B88B271E94375700DE8C13 /* Quick.framework in CopyFiles */,
+				D0B88B281E94375700DE8C13 /* RemoteMapping.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D0B88AD01E93F8DD00DE8C13 /* Lunar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lunar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +232,7 @@
 				D0B88AD51E93F8DD00DE8C13 /* Sources */,
 				D0B88AD61E93F8DD00DE8C13 /* Frameworks */,
 				D0B88AD71E93F8DD00DE8C13 /* Resources */,
+				D0B88B211E94374400DE8C13 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -267,9 +289,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0B88AEB1E93F8EF00DE8C13 /* Cartfile in Resources */,
-				D0B88B1D1E9426C000DE8C13 /* Cartfile.resolved in Resources */,
-				D0B88AED1E93F8FB00DE8C13 /* Cartfile.private in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B88B1E1E9432D700DE8C13 /* Model.xcdatamodeld in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,10 +318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B88B1F1E9436DA00DE8C13 /* LunarStoreSpec.swift in Sources */,
 				D0B88B161E941D8F00DE8C13 /* User.swift in Sources */,
-				D0B88AF11E93F98900DE8C13 /* LunarStoreSpec.swift in Sources */,
 				D0B88B141E941D4700DE8C13 /* ObjectID.swift in Sources */,
-				D0B88B101E941D0700DE8C13 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

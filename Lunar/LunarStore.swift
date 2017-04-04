@@ -17,7 +17,7 @@ struct LunarStore: NormalizedCache {
         let context = managedObjectContext
         let formatter = dateFormatter
         
-        return Promise { success, error in
+        return Promise { success, failure in
             let records = keys
                 .flatMap { key -> (type: String, id: String)? in
                     return GraphQLID.decode(id: key)
@@ -48,12 +48,13 @@ struct LunarStore: NormalizedCache {
                                     return Reference(key: primaryKey)
                                 })
                                 
-                                let json = object.toJSON(
-                                    relationshipType: relationshipType,
-                                    dateFormatter: formatter
+                                return Record(
+                                    key: primaryKey,
+                                    object.toJSON(
+                                        relationshipType: relationshipType,
+                                        dateFormatter: formatter
+                                    )
                                 )
-                                
-                                return Record(key: primaryKey, json)
                             }
                     } catch {
                         return records
@@ -68,7 +69,7 @@ struct LunarStore: NormalizedCache {
         let context = managedObjectContext
         let formatter = dateFormatter
         
-        return Promise { success, error in
+        return Promise { success, failure in
             let keys: [CacheKey] = records.storage
                 .index(by: { (key, value) -> (String, (String, Record)) in
                     let (type, id) = GraphQLID.decode(id: key)!
@@ -111,7 +112,8 @@ struct LunarStore: NormalizedCache {
                             context.upsert(
                                 json: data,
                                 inEntity: entityDescription,
-                                withPrimaryKey: id
+                                withPrimaryKey: id,
+                                dateFormatter: formatter
                             )
                             
                             return id
@@ -121,7 +123,12 @@ struct LunarStore: NormalizedCache {
                 }
                 .reduce([CacheKey](), +)
 
-            success(Set(keys))
+            do {
+                try context.save()
+                success(Set(keys))
+            } catch {
+                failure(error)
+            }
         }
     }
 }
