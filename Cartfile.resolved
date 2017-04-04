@@ -1,0 +1,6 @@
+github "Quick/Nimble" "v6.1.0"
+github "Quick/Quick" "v1.1.0"
+github "justinmakaila/JSONMapping" "0ee296d4013f4f8af8103f6ae5e441ab18ac48f4"
+github "justinmakaila/RemoteMapping" "2.0.2"
+github "justinmakaila/apollo-ios" "1cdea6fe3f58bc9176c051a522451550f0294e7e"
+github "wellth-app/CoreDataStack" "1.0"

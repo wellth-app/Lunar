@@ -8,8 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		D0B88ADA1E93F8DD00DE8C13 /* Lunar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AD01E93F8DD00DE8C13 /* Lunar.framework */; };
-		D0B88ADF1E93F8DD00DE8C13 /* LunarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88ADE1E93F8DD00DE8C13 /* LunarTests.swift */; };
 		D0B88AE11E93F8DE00DE8C13 /* Lunar.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B88AD31E93F8DD00DE8C13 /* Lunar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0B88AEB1E93F8EF00DE8C13 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = D0B88AEA1E93F8EF00DE8C13 /* Cartfile */; };
+		D0B88AED1E93F8FB00DE8C13 /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = D0B88AEC1E93F8FB00DE8C13 /* Cartfile.private */; };
+		D0B88AEF1E93F94A00DE8C13 /* LunarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88AEE1E93F94A00DE8C13 /* LunarStore.swift */; };
+		D0B88AF11E93F98900DE8C13 /* LunarStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88AF01E93F98900DE8C13 /* LunarStoreSpec.swift */; };
+		D0B88AF81E93FB8000DE8C13 /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF31E93FB8000DE8C13 /* Apollo.framework */; };
+		D0B88AF91E93FB8000DE8C13 /* JSONMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF41E93FB8000DE8C13 /* JSONMapping.framework */; };
+		D0B88AFA1E93FB8000DE8C13 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF51E93FB8000DE8C13 /* Nimble.framework */; };
+		D0B88AFB1E93FB8000DE8C13 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF61E93FB8000DE8C13 /* Quick.framework */; };
+		D0B88AFC1E93FB8000DE8C13 /* RemoteMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF71E93FB8000DE8C13 /* RemoteMapping.framework */; };
+		D0B88AFE1E93FB8800DE8C13 /* JSONMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF41E93FB8000DE8C13 /* JSONMapping.framework */; };
+		D0B88AFF1E93FB8800DE8C13 /* RemoteMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF71E93FB8000DE8C13 /* RemoteMapping.framework */; };
+		D0B88B011E93FDD500DE8C13 /* SequenceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B001E93FDD500DE8C13 /* SequenceExtensions.swift */; };
+		D0B88B081E93FEAC00DE8C13 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B071E93FEAC00DE8C13 /* DictionaryExtensions.swift */; };
+		D0B88B0C1E9410DE00DE8C13 /* CoreDataStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88B0A1E9410CF00DE8C13 /* CoreDataStack.framework */; };
+		D0B88B101E941D0700DE8C13 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B0E1E941D0700DE8C13 /* Model.xcdatamodeld */; };
+		D0B88B141E941D4700DE8C13 /* ObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B131E941D4700DE8C13 /* ObjectID.swift */; };
+		D0B88B161E941D8F00DE8C13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B151E941D8F00DE8C13 /* User.swift */; };
+		D0B88B181E94235400DE8C13 /* GraphQLIDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88B171E94235400DE8C13 /* GraphQLIDExtensions.swift */; };
+		D0B88B1B1E9425EE00DE8C13 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88B1A1E9425EE00DE8C13 /* CoreData.framework */; };
+		D0B88B1D1E9426C000DE8C13 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = D0B88B1C1E9426C000DE8C13 /* Cartfile.resolved */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +46,25 @@
 		D0B88AD31E93F8DD00DE8C13 /* Lunar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lunar.h; sourceTree = "<group>"; };
 		D0B88AD41E93F8DD00DE8C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0B88AD91E93F8DD00DE8C13 /* LunarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0B88ADE1E93F8DD00DE8C13 /* LunarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarTests.swift; sourceTree = "<group>"; };
 		D0B88AE01E93F8DD00DE8C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0B88AEA1E93F8EF00DE8C13 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		D0B88AEC1E93F8FB00DE8C13 /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		D0B88AEE1E93F94A00DE8C13 /* LunarStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunarStore.swift; sourceTree = "<group>"; };
+		D0B88AF01E93F98900DE8C13 /* LunarStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunarStoreSpec.swift; sourceTree = "<group>"; };
+		D0B88AF31E93FB8000DE8C13 /* Apollo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Apollo.framework; path = Carthage/Build/iOS/Apollo.framework; sourceTree = "<group>"; };
+		D0B88AF41E93FB8000DE8C13 /* JSONMapping.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONMapping.framework; path = Carthage/Build/iOS/JSONMapping.framework; sourceTree = "<group>"; };
+		D0B88AF51E93FB8000DE8C13 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		D0B88AF61E93FB8000DE8C13 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		D0B88AF71E93FB8000DE8C13 /* RemoteMapping.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RemoteMapping.framework; path = Carthage/Build/iOS/RemoteMapping.framework; sourceTree = "<group>"; };
+		D0B88B001E93FDD500DE8C13 /* SequenceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SequenceExtensions.swift; path = Extensions/SequenceExtensions.swift; sourceTree = "<group>"; };
+		D0B88B071E93FEAC00DE8C13 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryExtensions.swift; path = Extensions/DictionaryExtensions.swift; sourceTree = "<group>"; };
+		D0B88B0A1E9410CF00DE8C13 /* CoreDataStack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreDataStack.framework; path = Carthage/Build/iOS/CoreDataStack.framework; sourceTree = "<group>"; };
+		D0B88B0F1E941D0700DE8C13 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D0B88B131E941D4700DE8C13 /* ObjectID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObjectID.swift; path = Model/ObjectID.swift; sourceTree = "<group>"; };
+		D0B88B151E941D8F00DE8C13 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
+		D0B88B171E94235400DE8C13 /* GraphQLIDExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphQLIDExtensions.swift; path = Extensions/GraphQLIDExtensions.swift; sourceTree = "<group>"; };
+		D0B88B1A1E9425EE00DE8C13 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D0B88B1C1E9426C000DE8C13 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B88AFE1E93FB8800DE8C13 /* JSONMapping.framework in Frameworks */,
+				D0B88AFF1E93FB8800DE8C13 /* RemoteMapping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +81,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B88B1B1E9425EE00DE8C13 /* CoreData.framework in Frameworks */,
 				D0B88ADA1E93F8DD00DE8C13 /* Lunar.framework in Frameworks */,
+				D0B88B0C1E9410DE00DE8C13 /* CoreDataStack.framework in Frameworks */,
+				D0B88AF91E93FB8000DE8C13 /* JSONMapping.framework in Frameworks */,
+				D0B88AF81E93FB8000DE8C13 /* Apollo.framework in Frameworks */,
+				D0B88AFB1E93FB8000DE8C13 /* Quick.framework in Frameworks */,
+				D0B88AFA1E93FB8000DE8C13 /* Nimble.framework in Frameworks */,
+				D0B88AFC1E93FB8000DE8C13 /* RemoteMapping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,8 +98,12 @@
 		D0B88AC61E93F8DD00DE8C13 = {
 			isa = PBXGroup;
 			children = (
+				D0B88B1C1E9426C000DE8C13 /* Cartfile.resolved */,
+				D0B88AEC1E93F8FB00DE8C13 /* Cartfile.private */,
+				D0B88AEA1E93F8EF00DE8C13 /* Cartfile */,
 				D0B88AD21E93F8DD00DE8C13 /* Lunar */,
 				D0B88ADD1E93F8DD00DE8C13 /* LunarTests */,
+				D0B88AF21E93F9B200DE8C13 /* Dependencies */,
 				D0B88AD11E93F8DD00DE8C13 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +122,9 @@
 			children = (
 				D0B88AD31E93F8DD00DE8C13 /* Lunar.h */,
 				D0B88AD41E93F8DD00DE8C13 /* Info.plist */,
+				D0B88AEE1E93F94A00DE8C13 /* LunarStore.swift */,
+				D0B88AF01E93F98900DE8C13 /* LunarStoreSpec.swift */,
+				D0B88B021E93FDD700DE8C13 /* Extensions */,
 			);
 			path = Lunar;
 			sourceTree = "<group>";
@@ -80,10 +132,44 @@
 		D0B88ADD1E93F8DD00DE8C13 /* LunarTests */ = {
 			isa = PBXGroup;
 			children = (
-				D0B88ADE1E93F8DD00DE8C13 /* LunarTests.swift */,
+				D0B88B0D1E941CF500DE8C13 /* Model */,
 				D0B88AE01E93F8DD00DE8C13 /* Info.plist */,
 			);
 			path = LunarTests;
+			sourceTree = "<group>";
+		};
+		D0B88AF21E93F9B200DE8C13 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				D0B88B1A1E9425EE00DE8C13 /* CoreData.framework */,
+				D0B88B0A1E9410CF00DE8C13 /* CoreDataStack.framework */,
+				D0B88AF31E93FB8000DE8C13 /* Apollo.framework */,
+				D0B88AF41E93FB8000DE8C13 /* JSONMapping.framework */,
+				D0B88AF51E93FB8000DE8C13 /* Nimble.framework */,
+				D0B88AF61E93FB8000DE8C13 /* Quick.framework */,
+				D0B88AF71E93FB8000DE8C13 /* RemoteMapping.framework */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		D0B88B021E93FDD700DE8C13 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0B88B001E93FDD500DE8C13 /* SequenceExtensions.swift */,
+				D0B88B071E93FEAC00DE8C13 /* DictionaryExtensions.swift */,
+				D0B88B171E94235400DE8C13 /* GraphQLIDExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D0B88B0D1E941CF500DE8C13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0B88B0E1E941D0700DE8C13 /* Model.xcdatamodeld */,
+				D0B88B131E941D4700DE8C13 /* ObjectID.swift */,
+				D0B88B151E941D8F00DE8C13 /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +267,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B88AEB1E93F8EF00DE8C13 /* Cartfile in Resources */,
+				D0B88B1D1E9426C000DE8C13 /* Cartfile.resolved in Resources */,
+				D0B88AED1E93F8FB00DE8C13 /* Cartfile.private in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B88B181E94235400DE8C13 /* GraphQLIDExtensions.swift in Sources */,
+				D0B88B011E93FDD500DE8C13 /* SequenceExtensions.swift in Sources */,
+				D0B88AEF1E93F94A00DE8C13 /* LunarStore.swift in Sources */,
+				D0B88B081E93FEAC00DE8C13 /* DictionaryExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0B88ADF1E93F8DD00DE8C13 /* LunarTests.swift in Sources */,
+				D0B88B161E941D8F00DE8C13 /* User.swift in Sources */,
+				D0B88AF11E93F98900DE8C13 /* LunarStoreSpec.swift in Sources */,
+				D0B88B141E941D4700DE8C13 /* ObjectID.swift in Sources */,
+				D0B88B101E941D0700DE8C13 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,8 +426,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Lunar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinmakaila.Lunar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -349,8 +450,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Lunar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinmakaila.Lunar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -362,7 +468,12 @@
 		D0B88AE81E93F8DE00DE8C13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = KMC5HK5ZC7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LunarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinmakaila.LunarTests;
@@ -374,7 +485,12 @@
 		D0B88AE91E93F8DE00DE8C13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = KMC5HK5ZC7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LunarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinmakaila.LunarTests;
@@ -412,6 +528,20 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D0B88B0E1E941D0700DE8C13 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D0B88B0F1E941D0700DE8C13 /* Model.xcdatamodel */,
+			);
+			currentVersion = D0B88B0F1E941D0700DE8C13 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Model/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D0B88AC71E93F8DD00DE8C13 /* Project object */;
 }
