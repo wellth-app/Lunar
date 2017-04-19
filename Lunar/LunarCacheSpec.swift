@@ -1,9 +1,6 @@
 import Quick
 import Nimble
 import CoreData
-import CoreDataStack
-import JSONMapping
-import RemoteMapping
 import Apollo
 
 @testable
@@ -13,10 +10,7 @@ import Lunar
 final class LunarCacheSpec: QuickSpec {
     override func spec() {
         describe("Lunar Cache") {
-            let bundle = Bundle(for: User.self)
-            let dataStack = CoreDataStack(modelName: "Model", bundle: bundle, storeType: .inMemory)
-            let mainContext = dataStack.mainContext
-            var managedObjectContext: NSManagedObjectContext!
+            var subject: LunarCache!
             
             let dateFormatter: DateFormatter = {
                 let formatter = DateFormatter()
@@ -26,34 +20,22 @@ final class LunarCacheSpec: QuickSpec {
                 return formatter
             }()
             
-            var subject: LunarCache!
-            
             beforeEach {
-                managedObjectContext = dataStack.newBackgroundContext(
-                    "Test Context",
-                    parentContext: mainContext,
-                    mergeChanges: false
-                )
-                
-                subject = LunarCache(context: managedObjectContext, dateFormatter: dateFormatter)
+                subject = try! LunarCache(useMainQueueContext: true)
+                try! subject.purge()
             }
             
-            afterEach {
-                managedObjectContext.reset()
-                mainContext.reset()
-            }
-            
-            it("can merge records into a context") {
+            it("can merge records") {
                 let archivedAtString = dateFormatter.string(from: Date())
                 
                 let recordSet: RecordSet = [
-                    GraphQLID.encode(type: "User", id: "caa8883084d514d44d412c7a")!:  [
+                    "caa8883084d514d44d412c7a":  [
                         "_id": "caa8883084d514d44d412c7a",
                         "archivedAt": archivedAtString,
                         "updatedAt": "2016-09-22T22:41:31.330Z",
                         "name": "Justin"
                     ],
-                    GraphQLID.encode(type: "User", id: "d144c584e72faa3d322440e2")!: [
+                    "d144c584e72faa3d322440e2": [
                         "_id": "d144c584e72faa3d322440e2",
                         "archivedAt": archivedAtString,
                         "updatedAt": "2016-10-04T22:02:29.355Z",
@@ -70,9 +52,12 @@ final class LunarCacheSpec: QuickSpec {
                         }
                         .await()
                     
+                    print(recordSet)
+                    
+                    print(changes)
+                    
                     expect(error).to(beNil())
                     expect(changes.count).to(equal(2))
-                    expect(managedObjectContext.hasChanges).to(beFalse())
                     
                     let records = try subject
                         .loadRecords(forKeys: Array(recordSet.storage.keys))
@@ -82,7 +67,7 @@ final class LunarCacheSpec: QuickSpec {
                     
                     let archivedDates: [Date] = records
                         .flatMap { $0 }
-                        .flatMap { print($0); return $0.fields["archivedAt"] as? String }
+                        .flatMap { $0.fields["archivedAt"] as? String }
                         .flatMap { dateFormatter.date(from: $0) }
                     
                     expect(archivedDates.count).to(equal(2))
@@ -93,14 +78,16 @@ final class LunarCacheSpec: QuickSpec {
             
             it("loads no records from an empty context") {
                 let keys: [CacheKey] = [
-                    GraphQLID.encode(type: "User", id: "caa8883084d514d44d412c7a")!,
-                    GraphQLID.encode(type: "User", id: "d144c584e72faa3d322440e2")!
+                    "caa8883084d514d44d412c7a",
+                    "d144c584e72faa3d322440e2"
                 ]
                 
                 do {
                     let result = try subject
                         .loadRecords(forKeys: keys)
                         .await()
+                    
+                    print(result)
                     
                     expect(result.count).to(equal(0))
                 } catch {
@@ -109,7 +96,7 @@ final class LunarCacheSpec: QuickSpec {
             }
             
             context("In a populated context") {
-                let id = GraphQLID.encode(type: "User", id: "d144c584e72faa3d322440e2")!
+                let id = "d144c584e72faa3d322440e2"
                 let json: Apollo.JSONObject = [
                     "_id": "d144c584e72faa3d322440e2",
                     "archivedAt": NSNull(),

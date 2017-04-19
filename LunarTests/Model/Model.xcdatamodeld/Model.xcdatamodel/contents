@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="NoPrimaryKey" representedClassName="NoPrimaryKey" syncable="YES" codeGenerationType="class">
+        <attribute name="primaryKey" optional="YES" attributeType="String" syncable="YES"/>
+        <userInfo>
+            <entry key="localPrimaryKey" value="primaryKey"/>
+        </userInfo>
+    </entity>
     <entity name="User" representedClassName=".User" syncable="YES">
         <attribute name="archivedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -17,5 +23,6 @@
     </entity>
     <elements>
         <element name="User" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="NoPrimaryKey" positionX="-54" positionY="36" width="128" height="60"/>
     </elements>
 </model>
