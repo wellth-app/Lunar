@@ -42,13 +42,16 @@ public class LunarCache: NormalizedCache {
     }
     
     /// The persistent store coordinator for the Lunar managed object model
-    private let persistentStoreCoordinator: NSPersistentStoreCoordinator
+    let persistentStoreCoordinator: NSPersistentStoreCoordinator
     
     /// Whether or not to exclusively use the main queue (used for testing).
     private let useMainQueueContext: Bool
     
     /// The bundle where the model exists.
     private let bundle: Bundle
+    
+    /// The URL for the cache.
+    private let url: URL
     
     /// Initializes a new `LunarCache`.
     ///
@@ -60,6 +63,7 @@ public class LunarCache: NormalizedCache {
         let modelBundle = Bundle(for: LunarRecord.self)
         let modelName = Key.modelName.rawValue
         
+        self.url = cacheURL
         self.bundle = modelBundle
         self.useMainQueueContext = useMainQueueContext
         self.persistentStoreCoordinator = NSPersistentStoreCoordinator(
@@ -148,7 +152,7 @@ public class LunarCache: NormalizedCache {
                     try storeCoordinator.addPersistentSQLiteStore(
                         bundle: self.bundle,
                         modelName: Key.modelName.rawValue,
-                        url: storeURL
+                        url: self.url
                     )
                 } catch {
                     purgeError = Error.purgeError(error)
