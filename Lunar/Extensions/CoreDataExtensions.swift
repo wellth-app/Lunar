@@ -3,6 +3,8 @@ import Apollo
 
 
 extension NSManagedObjectModel {
+    /// Initializes a new model using the `name` to locate or create a new `momd`
+    /// or `mom` model.
     convenience init(bundle: Bundle, name: String) {
         if let momdModelURL = bundle.url(forResource: name, withExtension: "momd") {
             self.init(contentsOf: momdModelURL)!
@@ -28,10 +30,19 @@ enum NSPersistentStoreCoordinatorError: Error {
 }
 
 extension NSPersistentStoreCoordinator {
+    /// Creates a new persistent CoreData SQLite store.
+    ///
+    /// - Parameter bundle: The bundle in which to check for an existing store.
+    /// - Parameter modelName: The name of the model to create.
+    /// - Parameter url: The location at which to create the store.
+    /// - Parameter includeStoreInBackup: Whether or not to include the store in
+    ///   backups.
+    ///
+    /// - Throws: NSPersistentCoordinatorError if an error occurs.
     func addPersistentSQLiteStore(bundle: Bundle, modelName: String, url: URL, includeStoreInBackup: Bool = false) throws {
         let fileManager = FileManager.default
         let filePath = modelName + ".sqlite"
-        let storeURL = LunarCache.cacheURL.appendingPathComponent(filePath)
+        let storeURL = url.appendingPathComponent(filePath)
         let storePath = storeURL.path
         
         if !fileManager.fileExists(atPath: storePath),
@@ -90,6 +101,14 @@ extension NSPersistentStoreCoordinator {
 
 
 extension NSManagedObjectContext {
+    /// Finds an existing object matching `predicate` or creates a new one.
+    /// Passes the result to `configure` for configuration and returns the result.
+    ///
+    /// - Parameter entityNamed name: The entity name for Object.
+    /// - Parameter matching predicate: The predicate to query against.
+    /// - Parameter configure: A block which accepts an Object for configuration.
+    ///
+    /// - Returns Object: A newly inserted or updated object.
     @discardableResult
     func upsert<Object: NSManagedObject>(entityNamed name: String, matching predicate: NSPredicate, configure: (Object) -> Void) -> Object {
         let fetchRequest = NSFetchRequest<Object>(entityName: name)
@@ -108,15 +127,5 @@ extension NSManagedObjectContext {
         configure(result!)
         
         return result!
-    }
-    
-    func fetchSingleObject<Result: NSFetchRequestResult>(fetchRequest: NSFetchRequest<Result>) -> Result? {
-        fetchRequest.fetchLimit = 1
-        
-        do {
-            return try fetch(fetchRequest).first
-        } catch { }
-        
-        return nil
     }
 }

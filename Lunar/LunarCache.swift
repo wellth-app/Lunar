@@ -22,17 +22,6 @@ private func recordCacheKey(forFieldCacheKey cacheKey: CacheKey) -> CacheKey {
     return components.joined(separator: ".")
 }
 
-
-extension URL {
-    fileprivate static func documentsDirectoryURL() -> URL {
-        #if os(tvOS)
-            return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
-        #else
-            return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-        #endif
-    }
-}
-
 /// A CoreData cache for use with `ApolloStore`.
 public class LunarCache: NormalizedCache {
     /// The default URL to use for disk persistence. This is used during initialization
@@ -214,7 +203,7 @@ private extension LunarCache {
     func mergeRecords(records: RecordSet, inContext context: NSManagedObjectContext) throws -> Set<CacheKey> {
         let keys = Array<CacheKey>(records.storage.keys)
         var recordSet = RecordSet(records: try selectRecords(forKeys: keys, inContext: context))
-        let changedFieldKeys = Set(recordSet.merge(records: records))
+        let changedFieldKeys = recordSet.merge(records: records)
         let changedRecordKeys = Set(changedFieldKeys.map { recordCacheKey(forFieldCacheKey: $0) })
         
         for key in changedRecordKeys {

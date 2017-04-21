@@ -6,16 +6,13 @@ Lunar provides an implementation of the `NormalizedCache` protocol in [Apollo](h
 ### Usage
 Lunar is meant to serve as a piece of the Apollo stack, connecting your app to a hands-off CoreData persistent storage layer:
 ```
-let dataStack = /// Set up your core data stack
-let context: NSManagedObjectContext = /// get a context from your stack
-/// Optional
-let dateFormatter: JSONDateFormatter = /// Create a formatter for serializing dates to and from CoreData objects.
+/// Lunar sets up it's own CoreData stack and may throw a `LunarCache.Error`
+/// if something goes wrong.
+let lunarCache = try! LunarCache()
+
 
 let apollo = ApolloClient(
   networkTransport: MyNetworkTransport(),
-  store: LunarStore(
-    managedObjectContext: context,
-    dateFormatter: dateFormatter
-  )
+  store: ApolloStore(lunarCache)
 )
 ```

@@ -52,12 +52,9 @@ final class LunarCacheSpec: QuickSpec {
                         }
                         .await()
                     
-                    print(recordSet)
-                    
-                    print(changes)
-                    
                     expect(error).to(beNil())
-                    expect(changes.count).to(equal(2))
+                    /// Expect there to be 8 changed fields, 4 for each user.
+                    expect(changes.count).to(equal(8))
                     
                     let records = try subject
                         .loadRecords(forKeys: Array(recordSet.storage.keys))
@@ -83,11 +80,11 @@ final class LunarCacheSpec: QuickSpec {
                 ]
                 
                 do {
+                    /// Filter out the nil records for the sake of the test
                     let result = try subject
                         .loadRecords(forKeys: keys)
                         .await()
-                    
-                    print(result)
+                        .filter { $0 != nil }
                     
                     expect(result.count).to(equal(0))
                 } catch {
