@@ -1,3 +1,4 @@
 github "Quick/Nimble" "v6.1.0"
 github "Quick/Quick" "v1.1.0"
-github "justinmakaila/apollo-ios" "93047d99a115dd0f0359bd81471ac78c072898aa"
+github "apollographql/apollo-ios" "997fd41d692bae95724501c6600fb385371d474b"
+github "stephencelis/SQLite.swift" "0.11.2"

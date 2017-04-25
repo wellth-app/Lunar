@@ -249,7 +249,12 @@ struct LunarJSONSerialization {
             }
         )
         
-        return try JSONSerializationFormat.serialize(value: object)
+        print("JSON Object:\n", object)
+        
+        let json = try JSONSerializationFormat.serialize(value: object)
+        
+        print("Serialized JSON:\n", json)
+        return json
     }
     
     /// Deserializes some JSON Data to a JSONObject.

@@ -80,45 +80,6 @@ final class LunarCacheSpec: QuickSpec {
                 }
             }
             
-            it("stores relationships in seperate objects") {
-                let recordSet: RecordSet = [
-                    "caa8883084d514d44d412c7a":  [
-                        "_id": "caa8883084d514d44d412c7a",
-                        "archivedAt": NSNull(),
-                        "updatedAt": "2016-09-22T22:41:31.330Z",
-                        "name": "Justin",
-                        "significantOther": Reference(key: "d144c584e72faa3d322440e2")
-                    ],
-                    "d144c584e72faa3d322440e2": [
-                        "_id": "d144c584e72faa3d322440e2",
-                        "archivedAt": NSNull(),
-                        "updatedAt": "2016-10-04T22:02:29.355Z",
-                        "name": "Paige",
-                        "significantOther": [
-                            "_id": "caa8883084d514d44d412c7a",
-                            "archivedAt": NSNull(),
-                            "updatedAt": "2016-09-22T22:41:31.330Z",
-                            "name": "Justin",
-                            "significantOther": Reference(key: "d144c584e72faa3d322440e2")
-                        ],
-                        "friends": [
-                            Reference(key: "1234"),
-                            Reference(key: "5678")
-                        ]
-                    ]
-                ]
-                
-                do {
-                    let result = try subject
-                        .merge(records: recordSet)
-                        .await()
-                    
-                    print(result)
-                } catch {
-                    fail()
-                }
-            }
-            
             context("In a populated context") {
                 let id = "d144c584e72faa3d322440e2"
                 let json: Apollo.JSONObject = [

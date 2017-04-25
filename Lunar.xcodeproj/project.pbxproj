@@ -11,6 +11,9 @@
 		D0128DE71EA6A1B500AA3ECF /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AF31E93FB8000DE8C13 /* Apollo.framework */; };
 		D074E0311EA8F67900D366EB /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074E0301EA8F67900D366EB /* FoundationExtensions.swift */; };
 		D074E0341EA8F93500D366EB /* Lunar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0128DE21EA6908A00AA3ECF /* Lunar.xcdatamodeld */; };
+		D07EDCB01EAFAC55005EC87C /* StarWarsAPI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D07EDCAF1EAFAC55005EC87C /* StarWarsAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0951A121EAA4118006592D5 /* LunarCacheImplementationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0951A101EAA4114006592D5 /* LunarCacheImplementationSpec.swift */; };
+		D0951A171EAA47D7006592D5 /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0951A161EAA47D7006592D5 /* MockNetworkTransport.swift */; };
 		D0B88ADA1E93F8DD00DE8C13 /* Lunar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AD01E93F8DD00DE8C13 /* Lunar.framework */; };
 		D0B88AE11E93F8DE00DE8C13 /* Lunar.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B88AD31E93F8DD00DE8C13 /* Lunar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B88AEF1E93F94A00DE8C13 /* LunarCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88AEE1E93F94A00DE8C13 /* LunarCache.swift */; };
@@ -45,6 +48,7 @@
 				D0B88B241E94375700DE8C13 /* Apollo.framework in CopyFiles */,
 				D0B88B261E94375700DE8C13 /* Nimble.framework in CopyFiles */,
 				D0B88B271E94375700DE8C13 /* Quick.framework in CopyFiles */,
+				D07EDCB01EAFAC55005EC87C /* StarWarsAPI.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +59,9 @@
 		D0128DE51EA696E100AA3ECF /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataExtensions.swift; path = Extensions/CoreDataExtensions.swift; sourceTree = "<group>"; };
 		D074E0301EA8F67900D366EB /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoundationExtensions.swift; path = Extensions/FoundationExtensions.swift; sourceTree = "<group>"; };
 		D074E0321EA8F8B500D366EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D07EDCAF1EAFAC55005EC87C /* StarWarsAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StarWarsAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0951A101EAA4114006592D5 /* LunarCacheImplementationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunarCacheImplementationSpec.swift; sourceTree = "<group>"; };
+		D0951A161EAA47D7006592D5 /* MockNetworkTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockNetworkTransport.swift; path = "Test Fixtures/MockNetworkTransport.swift"; sourceTree = "<group>"; };
 		D0B88AD01E93F8DD00DE8C13 /* Lunar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lunar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B88AD31E93F8DD00DE8C13 /* Lunar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lunar.h; sourceTree = "<group>"; };
 		D0B88AD41E93F8DD00DE8C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +111,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		D0951A131EAA47B0006592D5 /* Test Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				D0951A161EAA47D7006592D5 /* MockNetworkTransport.swift */,
+			);
+			name = "Test Fixtures";
+			sourceTree = "<group>";
+		};
 		D0B88AC61E93F8DD00DE8C13 = {
 			isa = PBXGroup;
 			children = (
@@ -130,10 +145,12 @@
 		D0B88AD21E93F8DD00DE8C13 /* Lunar */ = {
 			isa = PBXGroup;
 			children = (
+				D0951A131EAA47B0006592D5 /* Test Fixtures */,
 				D0B88AD31E93F8DD00DE8C13 /* Lunar.h */,
 				D0B88AD41E93F8DD00DE8C13 /* Info.plist */,
 				D0B88AEE1E93F94A00DE8C13 /* LunarCache.swift */,
 				D0B88AF01E93F98900DE8C13 /* LunarCacheSpec.swift */,
+				D0951A101EAA4114006592D5 /* LunarCacheImplementationSpec.swift */,
 				D0128DE11EA6906B00AA3ECF /* Model */,
 				D0B88B021E93FDD700DE8C13 /* Extensions */,
 			);
@@ -151,6 +168,7 @@
 		D0B88AF21E93F9B200DE8C13 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				D07EDCAF1EAFAC55005EC87C /* StarWarsAPI.framework */,
 				D0B88B1A1E9425EE00DE8C13 /* CoreData.framework */,
 				D0B88AF31E93FB8000DE8C13 /* Apollo.framework */,
 				D0B88AF51E93FB8000DE8C13 /* Nimble.framework */,
@@ -294,7 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0951A121EAA4118006592D5 /* LunarCacheImplementationSpec.swift in Sources */,
 				D0B88B1F1E9436DA00DE8C13 /* LunarCacheSpec.swift in Sources */,
+				D0951A171EAA47D7006592D5 /* MockNetworkTransport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
