@@ -86,7 +86,7 @@ public class LunarCache: NormalizedCache {
     ///            rejects with a `LunarCache.Error`, typically indicating a
     ///            deserialization error.
     public func loadRecords(forKeys keys: [CacheKey]) -> Promise<[Record?]> {
-        let context = newManagedObjectContext()
+        let context = newManagedObjectContext(mainQueue: useMainQueueContext)
         
         return Promise<[Record?]> { resolve, reject in
             context.performAndWait {
@@ -115,7 +115,7 @@ public class LunarCache: NormalizedCache {
     //             a serialization error, or an NSError from attempting to save
     ///            the managed object context.
     public func merge(records: RecordSet) -> Promise<Set<CacheKey>> {
-        let context = newManagedObjectContext()
+        let context = newManagedObjectContext(mainQueue: useMainQueueContext)
         
         return Promise { resolve, reject in
             context.performAndWait {
@@ -169,8 +169,8 @@ public class LunarCache: NormalizedCache {
     /// the persistent store coordinator.
     ///
     /// - Returns: A new NSManagedObjectContext with private concurrency.
-    private func newManagedObjectContext() -> NSManagedObjectContext {
-        let concurrencyType: NSManagedObjectContextConcurrencyType = useMainQueueContext
+    public func newManagedObjectContext(mainQueue: Bool = false) -> NSManagedObjectContext {
+        let concurrencyType: NSManagedObjectContextConcurrencyType = mainQueue
             ? .mainQueueConcurrencyType
             : .privateQueueConcurrencyType
         
@@ -183,6 +183,12 @@ public class LunarCache: NormalizedCache {
 }
 
 private extension LunarCache {
+    /// Selects all records matching `keys` in `context`.
+    ///
+    /// - Parameter keys: The CacheKeys of the Records to fetch.
+    /// - Parameter context: The `NSManagedObjectContext` to fetch from.
+    /// - Throws: LunarCache.Error if the object is an invalid shape or value.
+    /// - Returns: Collection of `Record`s with a `key` in `keys`.
     func selectRecords(forKeys keys: [CacheKey], inContext context: NSManagedObjectContext) throws -> [Record] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Key.entityName.rawValue)
         fetchRequest.predicate = NSPredicate(format: "%K in %@", Key.key.rawValue, keys)
@@ -204,6 +210,13 @@ private extension LunarCache {
             }
     }
     
+    /// Merges `records` into context, creating new objects and updating existing
+    /// objects.
+    ///
+    /// - Parameter records: The `RecordSet` to merge into `context`.
+    /// - Parameter context: The `NSManagedObjectContext` to perform the merge in.
+    /// - Throws: LunarCache.Error if an object is an invalid shape or value.
+    /// - Returns: A set of `CacheKey`s matching the newly created or updated records.
     func mergeRecords(records: RecordSet, inContext context: NSManagedObjectContext) throws -> Set<CacheKey> {
         let keys = Array<CacheKey>(records.storage.keys)
         var recordSet = RecordSet(records: try selectRecords(forKeys: keys, inContext: context))
