@@ -24,6 +24,13 @@ private func recordCacheKey(forFieldCacheKey cacheKey: CacheKey) -> CacheKey {
 
 /// A CoreData cache for use with `ApolloStore`.
 public class LunarCache: NormalizedCache {
+    /// The entity name used by the cache. This is for custom configuration
+    /// of the core data stack through a provided `NSManagedObjectContext`
+    public static let EntityName = Key.entityName.rawValue
+    
+    /// The model name used by the cache.
+    public static let ModelName = Key.modelName.rawValue
+    
     /// The default URL to use for disk persistence. This is used during initialization
     /// of a `LunarCache`. In order to ensure that the data is stored at the
     /// desired directory, set this variable, THEN initialize a new `LunarCache`.
