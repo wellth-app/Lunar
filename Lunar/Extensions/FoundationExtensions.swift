@@ -7,7 +7,7 @@ extension URL {
         #endif
     }
     
-    static func temporaryDirectoryURL() -> URL {
+    public static func temporaryDirectoryURL() -> URL {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last!
     }
 }

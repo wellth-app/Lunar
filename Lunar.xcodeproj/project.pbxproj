@@ -12,8 +12,14 @@
 		D074E0311EA8F67900D366EB /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074E0301EA8F67900D366EB /* FoundationExtensions.swift */; };
 		D074E0341EA8F93500D366EB /* Lunar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0128DE21EA6908A00AA3ECF /* Lunar.xcdatamodeld */; };
 		D07EDCB01EAFAC55005EC87C /* StarWarsAPI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D07EDCAF1EAFAC55005EC87C /* StarWarsAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D07EDCBD1EAFCDF9005EC87C /* FetchQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EDCB41EAFCDF9005EC87C /* FetchQueryTests.swift */; };
+		D07EDCC01EAFCDF9005EC87C /* LoadQueryFromStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EDCB81EAFCDF9005EC87C /* LoadQueryFromStoreTests.swift */; };
+		D07EDCC21EAFCDF9005EC87C /* StoreTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EDCBA1EAFCDF9005EC87C /* StoreTransactionTests.swift */; };
+		D07EDCC31EAFCDF9005EC87C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EDCBB1EAFCDF9005EC87C /* Utilities.swift */; };
+		D07EDCC41EAFCDF9005EC87C /* WatchQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EDCBC1EAFCDF9005EC87C /* WatchQueryTests.swift */; };
+		D07EDCC61EAFCE32005EC87C /* TestCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EDCC51EAFCE32005EC87C /* TestCacheProvider.swift */; };
+		D07EDCC81EAFCEE5005EC87C /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EDCC71EAFCEE5005EC87C /* MockNetworkTransport.swift */; };
 		D0951A121EAA4118006592D5 /* LunarCacheImplementationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0951A101EAA4114006592D5 /* LunarCacheImplementationSpec.swift */; };
-		D0951A171EAA47D7006592D5 /* MockNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0951A161EAA47D7006592D5 /* MockNetworkTransport.swift */; };
 		D0B88ADA1E93F8DD00DE8C13 /* Lunar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B88AD01E93F8DD00DE8C13 /* Lunar.framework */; };
 		D0B88AE11E93F8DE00DE8C13 /* Lunar.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B88AD31E93F8DD00DE8C13 /* Lunar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B88AEF1E93F94A00DE8C13 /* LunarCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B88AEE1E93F94A00DE8C13 /* LunarCache.swift */; };
@@ -60,8 +66,14 @@
 		D074E0301EA8F67900D366EB /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoundationExtensions.swift; path = Extensions/FoundationExtensions.swift; sourceTree = "<group>"; };
 		D074E0321EA8F8B500D366EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D07EDCAF1EAFAC55005EC87C /* StarWarsAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StarWarsAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D07EDCB41EAFCDF9005EC87C /* FetchQueryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchQueryTests.swift; sourceTree = "<group>"; };
+		D07EDCB81EAFCDF9005EC87C /* LoadQueryFromStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadQueryFromStoreTests.swift; sourceTree = "<group>"; };
+		D07EDCBA1EAFCDF9005EC87C /* StoreTransactionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTransactionTests.swift; sourceTree = "<group>"; };
+		D07EDCBB1EAFCDF9005EC87C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		D07EDCBC1EAFCDF9005EC87C /* WatchQueryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchQueryTests.swift; sourceTree = "<group>"; };
+		D07EDCC51EAFCE32005EC87C /* TestCacheProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCacheProvider.swift; sourceTree = "<group>"; };
+		D07EDCC71EAFCEE5005EC87C /* MockNetworkTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkTransport.swift; sourceTree = "<group>"; };
 		D0951A101EAA4114006592D5 /* LunarCacheImplementationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunarCacheImplementationSpec.swift; sourceTree = "<group>"; };
-		D0951A161EAA47D7006592D5 /* MockNetworkTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockNetworkTransport.swift; path = "Test Fixtures/MockNetworkTransport.swift"; sourceTree = "<group>"; };
 		D0B88AD01E93F8DD00DE8C13 /* Lunar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lunar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B88AD31E93F8DD00DE8C13 /* Lunar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lunar.h; sourceTree = "<group>"; };
 		D0B88AD41E93F8DD00DE8C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,12 +123,17 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		D0951A131EAA47B0006592D5 /* Test Fixtures */ = {
+		D07EDCB31EAFCDF9005EC87C /* SharedTests */ = {
 			isa = PBXGroup;
 			children = (
-				D0951A161EAA47D7006592D5 /* MockNetworkTransport.swift */,
+				D07EDCC71EAFCEE5005EC87C /* MockNetworkTransport.swift */,
+				D07EDCB41EAFCDF9005EC87C /* FetchQueryTests.swift */,
+				D07EDCB81EAFCDF9005EC87C /* LoadQueryFromStoreTests.swift */,
+				D07EDCBA1EAFCDF9005EC87C /* StoreTransactionTests.swift */,
+				D07EDCBB1EAFCDF9005EC87C /* Utilities.swift */,
+				D07EDCBC1EAFCDF9005EC87C /* WatchQueryTests.swift */,
 			);
-			name = "Test Fixtures";
+			path = SharedTests;
 			sourceTree = "<group>";
 		};
 		D0B88AC61E93F8DD00DE8C13 = {
@@ -145,7 +162,6 @@
 		D0B88AD21E93F8DD00DE8C13 /* Lunar */ = {
 			isa = PBXGroup;
 			children = (
-				D0951A131EAA47B0006592D5 /* Test Fixtures */,
 				D0B88AD31E93F8DD00DE8C13 /* Lunar.h */,
 				D0B88AD41E93F8DD00DE8C13 /* Info.plist */,
 				D0B88AEE1E93F94A00DE8C13 /* LunarCache.swift */,
@@ -160,7 +176,9 @@
 		D0B88ADD1E93F8DD00DE8C13 /* LunarTests */ = {
 			isa = PBXGroup;
 			children = (
+				D07EDCB31EAFCDF9005EC87C /* SharedTests */,
 				D0B88AE01E93F8DD00DE8C13 /* Info.plist */,
+				D07EDCC51EAFCE32005EC87C /* TestCacheProvider.swift */,
 			);
 			path = LunarTests;
 			sourceTree = "<group>";
@@ -313,8 +331,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0951A121EAA4118006592D5 /* LunarCacheImplementationSpec.swift in Sources */,
+				D07EDCC61EAFCE32005EC87C /* TestCacheProvider.swift in Sources */,
 				D0B88B1F1E9436DA00DE8C13 /* LunarCacheSpec.swift in Sources */,
-				D0951A171EAA47D7006592D5 /* MockNetworkTransport.swift in Sources */,
+				D07EDCC81EAFCEE5005EC87C /* MockNetworkTransport.swift in Sources */,
+				D07EDCC41EAFCDF9005EC87C /* WatchQueryTests.swift in Sources */,
+				D07EDCC01EAFCDF9005EC87C /* LoadQueryFromStoreTests.swift in Sources */,
+				D07EDCBD1EAFCDF9005EC87C /* FetchQueryTests.swift in Sources */,
+				D07EDCC21EAFCDF9005EC87C /* StoreTransactionTests.swift in Sources */,
+				D07EDCC31EAFCDF9005EC87C /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

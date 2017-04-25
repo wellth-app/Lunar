@@ -12,71 +12,84 @@ final class LunarCacheImplmentationSpec: QuickSpec {
         let cacheURL = URL.temporaryDirectoryURL()
         let query = HeroNameQuery()
         
-        var subject: NormalizedCache!
+        var subject: LunarCache!
         var apolloStore: ApolloStore!
         var networkTransport: NetworkTransport!
         var apolloClient: ApolloClient!
         
-        beforeEach {
-            subject = try! LunarCache(
-                cacheURL: cacheURL,
-                useMainQueueContext: true
-            )
-            
-            apolloStore = ApolloStore(cache: subject)
-            
-            networkTransport = MockNetworkTransport(responseBody: [
-                "data": [
-                    "hero": [
-                        "name": "Luke Skywalker",
-                        "__typename": "Human"
-                    ]
-                ]
-            ])
-            
-            apolloClient = ApolloClient(
-                networkTransport: networkTransport,
-                store: apolloStore
-            )
-        }
-        
-        context("persistence") {
-            var newSubject: NormalizedCache!
-            var newStore: ApolloStore!
-            var newClient: ApolloClient!
-            
+        describe("LunarCache implementation") {
             beforeEach {
-                
-                newSubject = try! LunarCache(
+                subject = try! LunarCache(
                     cacheURL: cacheURL,
                     useMainQueueContext: true
                 )
                 
-                newStore = ApolloStore(cache: newSubject)
-                newClient = ApolloClient(
+                apolloStore = ApolloStore(cache: subject)
+                
+                networkTransport = MockNetworkTransport(body: [
+                    "data": [
+                        "hero": [
+                            "name": "Luke Skywalker",
+                            "__typename": "Human"
+                        ]
+                    ]
+                ])
+                
+                apolloClient = ApolloClient(
                     networkTransport: networkTransport,
-                    store: newStore
+                    store: apolloStore
                 )
             }
-        
-            it("can fetch a query from a new cache") {
-                var queryResult: GraphQLResult<HeroNameQuery.Data>? = nil
+            
+            afterEach {
+                try! subject.purge()
+            }
+            
+            context("persistence") {
+                var newSubject: LunarCache!
+                var newStore: ApolloStore!
+                var newClient: ApolloClient!
                 
-                waitUntil { done in
-                    /// Ensure the data is cached by the client before creating a
-                    /// new one.
-                    apolloClient.fetch(query: query, cachePolicy: .fetchIgnoringCacheData) { firstResult, _ in
+                beforeEach {
+                    waitUntil { done in
+                        /// Ensure the data is cached before creating a new one.
+                        apolloClient.fetch(
+                            query: query,
+                            cachePolicy: .fetchIgnoringCacheData,
+                            resultHandler: { _ in done() }
+                        )
+                    }
+                    
+                    newSubject = try! LunarCache(
+                        cacheURL: cacheURL,
+                        useMainQueueContext: true
+                    )
+                    
+                    newStore = ApolloStore(cache: newSubject)
+                    newClient = ApolloClient(
+                        networkTransport: networkTransport,
+                        store: newStore
+                    )
+                }
+                
+                afterEach {
+                    try! newSubject.purge()
+                }
+            
+                it("can fetch a query from a new cache") {
+                    var queryResult: GraphQLResult<HeroNameQuery.Data>? = nil
+                    
+                    waitUntil { done in
                         newClient.fetch(query: query, cachePolicy: .returnCacheDataDontFetch) { result, error in
                             queryResult = result
                             done()
                         }
                     }
                     
+                    expect(queryResult).toNot(beNil())
+                    expect(queryResult?.data?.hero?.name).to(equal("Luke Skywalker"))
+                    expect(queryResult?.data?.hero?.__typename).to(equal("Human"))
                 }
-                
-                expect(queryResult).toNot(beNil())
-                expect(queryResult?.data?.hero?.name).to(equal("Luke Skywalker"))
-                expect(queryResult?.data?.hero?.__typename).to(equal("Human"))
             }
         }
     }

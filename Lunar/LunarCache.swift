@@ -60,8 +60,14 @@ public class LunarCache: NormalizedCache {
     /// The URL for the cache.
     private let url: URL
     
+    /// Private context dedicated to serializing merges.
+    private lazy var writerContext: NSManagedObjectContext = {
+        return self.newManagedObjectContext(mainQueue: self.useMainQueueContext)
+    }()
+    
     /// Initializes a new `LunarCache`.
     ///
+    /// - Parameter cacheURL: The URL for the SQLite store.
     /// - Parameter useMainQueueContext: Indicates whether or not the cache
     ///   should use the main queue context exclusively. This defaults to false,
     ///   as it's only useful for testing. The best practice is to perform 
@@ -122,7 +128,7 @@ public class LunarCache: NormalizedCache {
     //             a serialization error, or an NSError from attempting to save
     ///            the managed object context.
     public func merge(records: RecordSet) -> Promise<Set<CacheKey>> {
-        let context = newManagedObjectContext(mainQueue: useMainQueueContext)
+        let context = writerContext
         
         return Promise { resolve, reject in
             context.performAndWait {
